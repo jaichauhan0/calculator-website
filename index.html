@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All‑in‑One Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <nav class="navbar glass">
+    <div class="nav-brand">🔢 CalculatorX</div>
+    <input type="checkbox" id="menu-toggle" />
+    <label for="menu-toggle" class="hamburger">&#9776;</label>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#arithmetic">Arithmetic</a></li>
+      <li><a href="#bmi">BMI</a></li>
+      <li><a href="#emi">Loan EMI</a></li>
+      <li><a href="#currency">Currency</a></li>
+    </ul>
+  </nav>
+
+  <div class="bg"></div>
+  <div class="container glass">
+    <header>
+      <h1>🧮 All‑in‑One Calculator</h1>
+      <div class="toggle-wrapper">
+        <label class="switch">
+          <input type="checkbox" id="themeToggle" onchange="toggleTheme()" />
+          <span class="slider"></span>
+        </label>
+        <span id="modeLabel">Light</span>
+      </div>
+    </header>
+
+    <!-- Arithmetic Calculator -->
+    <section>
+      <h2>Basic Arithmetic</h2>
+      <input type="number" id="num1" placeholder="Number 1" />
+      <input type="number" id="num2" placeholder="Number 2" />
+      <select id="operation">
+        <option value="+">+</option>
+        <option value="-">−</option>
+        <option value="*">×</option>
+        <option value="/">÷</option>
+      </select>
+      <button onclick="calculateArithmetic()">Calculate</button>
+      <p id="arithmeticResult"></p>
+    </section>
+
+    <!-- Area of Circle -->
+    <section>
+      <h2>Area of a Circle</h2>
+      <input type="number" id="radius" placeholder="Enter radius" />
+      <button onclick="calculateArea()">Calculate</button>
+      <p id="areaResult"></p>
+    </section>
+
+    <!-- Temperature Converter -->
+    <section>
+      <h2>Temperature Converter</h2>
+      <input type="number" id="tempInput" placeholder="Temperature" />
+      <select id="tempUnit">
+        <option value="CtoF">Celsius to Fahrenheit</option>
+        <option value="FtoC">Fahrenheit to Celsius</option>
+      </select>
+      <button onclick="convertTemperature()">Convert</button>
+      <p id="tempResult"></p>
+    </section>
+
+    <!-- Age Calculator -->
+    <section>
+      <h2>Age Calculator</h2>
+      <input type="date" id="birthDate" />
+      <button onclick="calculateAge()">Calculate Age</button>
+      <p id="ageResult"></p>
+    </section>
+
+    <!-- BMI Calculator -->
+    <section>
+      <h2>BMI Calculator</h2>
+      <input type="number" id="weight" placeholder="Weight (kg)" />
+      <input type="number" id="height" placeholder="Height (cm)" />
+      <button onclick="calculateBMI()">Calculate BMI</button>
+      <p id="bmiResult"></p>
+    </section>
+
+    <!-- Loan EMI Calculator -->
+    <section>
+      <h2>Loan EMI Calculator</h2>
+      <input type="number" id="loanAmount" placeholder="Loan Amount" />
+      <input type="number" id="annualInterest" placeholder="Annual Interest (%)" />
+      <input type="number" id="loanTenure" placeholder="Tenure (years)" />
+      <button onclick="calculateEMI()">Calculate EMI</button>
+      <p id="emiResult"></p>
+    </section>
+
+    <!-- Currency Converter -->
+    <section>
+      <h2>Currency Converter</h2>
+      <input type="number" id="currencyAmount" placeholder="Amount" />
+      <div class="dual-input">
+        <input type="text" id="currencyFrom" placeholder="From (USD)" maxlength="3" />
+        <input type="text" id="currencyTo" placeholder="To (EUR)" maxlength="3" />
+      </div>
+      <button onclick="convertCurrency()">Convert</button>
+      <p id="currencyResult"></p>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
